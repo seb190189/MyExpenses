@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Expenses</string>
+    <string name="category_prompt">Choose a category</string>
+    <string-array name="categories">
+        <item>Bills</item>
+        <item>EMI</item>
+        <item>Entertainment</item>
+        <item>Food Drinks</item>
+        <item>Fuel</item>
+        <item>Groceries</item>
+        <item>Health</item>
+        <item>Investment</item>
+        <item>Shopping</item>
+        <item>Transfer</item>
+        <item>Travel</item>
+        <item>Other</item>
+    </string-array>
+    <string name="Rs">\u20B9</string>
+</resources>
