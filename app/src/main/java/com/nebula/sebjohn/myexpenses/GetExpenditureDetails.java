@@ -2,6 +2,7 @@ package com.nebula.sebjohn.myexpenses;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.CalendarContract;
 import android.support.v4.media.session.PlaybackStateCompat;
@@ -22,7 +23,7 @@ import java.util.Locale;
 
 public class GetExpenditureDetails extends AppCompatActivity {
 
-    EditText recentspends_date;
+  /*  EditText recentspends_date;
     EditText recentspends_amount,recentspends_additional_information,recentspends_place;
     Spinner spinnerCategories;
     ImageButton imgBtnSave;
@@ -46,6 +47,8 @@ public class GetExpenditureDetails extends AppCompatActivity {
             public void onClick(View v) {
                 DBCreate();
                 submitData2SQLiteDB();
+                Intent i = new Intent(GetExpenditureDetails.this,ExpenditureSummary.class);
+                startActivity(i);
             }
         });
 
@@ -121,6 +124,6 @@ public class GetExpenditureDetails extends AppCompatActivity {
         recentspends_additional_information.getText().clear();
         recentspends_place.getText().clear();
         recentspends_amount.getText().clear();
-    }
+    }*/
 
 }
