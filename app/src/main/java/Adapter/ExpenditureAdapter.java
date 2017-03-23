@@ -36,7 +36,7 @@ public class ExpenditureAdapter extends RecyclerView.Adapter<ExpenditureViewHold
     private List<Expenditure> listExpenditure;
     private SqliteDatabase mDatabase;
 
-    public ExpenditureAdapter(Context context,List<Expenditure>listExpenditure){
+    public ExpenditureAdapter(Context context,List<Expenditure> listExpenditure){
         this.context =context;
         this.listExpenditure = listExpenditure;
         mDatabase = new SqliteDatabase(context);
@@ -58,6 +58,14 @@ public class ExpenditureAdapter extends RecyclerView.Adapter<ExpenditureViewHold
             @Override
             public void onClick(View v) {
                 editTaskDialog(singleExpense);
+            }
+        });
+        holder.deleteExpense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabase.deleteExpenditure(singleExpense.getId());
+                ((Activity)context).finish();
+                context.startActivity(((Activity) context).getIntent());
             }
         });
     }
@@ -107,6 +115,9 @@ public class ExpenditureAdapter extends RecyclerView.Adapter<ExpenditureViewHold
 
         if (expenditure !=null){
             placeField.setText(expenditure.getPlace());
+            dateField.setText(expenditure.getDate());
+            amountField.setText(String.valueOf(expenditure.getAmount()));
+            additional_infoField.setText(expenditure.getAdditional_Info());
 
         }
 
@@ -114,6 +125,7 @@ public class ExpenditureAdapter extends RecyclerView.Adapter<ExpenditureViewHold
         builder.setTitle("Edit expense");
         builder.setView(subview);
         builder.create();
+
         builder.setPositiveButton("EDIT EXPENSE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
