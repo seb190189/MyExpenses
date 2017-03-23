@@ -21,7 +21,7 @@ public class SqliteDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 5;
     private static final String DATABASE_NAME = "myexpenditure";
     private static final String TABLE_EXPENDITURE = "myexpenditures";
-    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_ID = "_id";
     private static final String COLUMN_PLACE = "place";
     private static final String COLUMN_DATE = "date";
     private static final String COLUMN_AMOUNT = "amount";
